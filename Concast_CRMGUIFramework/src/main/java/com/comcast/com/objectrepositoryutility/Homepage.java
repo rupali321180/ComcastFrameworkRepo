@@ -26,6 +26,9 @@ public class Homepage extends Webdriverutility{
 	@FindBy(xpath = "//a[.='Products']")
 	private WebElement productlnk;
 	
+	@FindBy(linkText = "Documents")
+	private WebElement documentlnk;
+	
 	@FindBy(xpath = "//a[text()='Contacts']")
 	private WebElement contactlnk;
 	
@@ -47,6 +50,10 @@ public class Homepage extends Webdriverutility{
 
 	public WebElement getProductlnk() {
 		return productlnk;
+	}
+
+	public WebElement getDocumentlnk() {
+		return documentlnk;
 	}
 
 	public WebElement getContactlnk() {
