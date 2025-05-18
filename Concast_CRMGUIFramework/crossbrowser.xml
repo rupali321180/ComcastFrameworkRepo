@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests">
+  <test thread-count="2" name="Test-chrome">
+  <parameter name="Browserr" value="chrome"></parameter>
+    <classes>
+      <class name="com.comcast.crm.concattest.CreatecontactTest"/>
+      </classes>
+      </test>
+        <test thread-count="2" name="Test-firefox">
+        <parameter name="Browserr" value="firefox"></parameter>
+       <classes>
+      <class name="com.comcast.crm.orgtest.Createorgtest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
