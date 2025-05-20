@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
 
 import com.concast.com.generic.fileutility.ExcelUtility;
 import com.concast.com.generic.fileutility.Fileutility;
@@ -15,7 +16,8 @@ import com.concast.com.generic.webdriverutility.Webdriverutility;
 
 public class CeateOrgWithPhoneno {
 
-	public static void main(String[] args) throws InterruptedException, IOException {
+	@Test
+	public void test()throws InterruptedException, IOException {
 		// TODO Auto-generated method stub
 
 
