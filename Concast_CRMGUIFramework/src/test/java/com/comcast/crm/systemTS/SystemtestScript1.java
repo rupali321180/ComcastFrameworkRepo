@@ -58,6 +58,7 @@ public class SystemtestScript1 {
 		}
 		
 		driver.get(URL);
+		driver.manage().window().maximize();
 		Thread.sleep(2000);
 		driver.findElement(By.name("user_name")).sendKeys("admin");
 		
