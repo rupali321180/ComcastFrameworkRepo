@@ -9,7 +9,7 @@
    </groups>
   <test thread-count="2" name="Test">
    <classes>
-      <class name="com.comcast.crm.concattest.CreatecontactTest"/>
+      <class name="com.comcast.crm.orgtest.Createorgtest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

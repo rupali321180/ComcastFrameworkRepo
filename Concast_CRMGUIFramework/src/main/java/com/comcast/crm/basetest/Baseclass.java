@@ -24,7 +24,7 @@ import com.concast.com.genericdatabaseutility.Databaseutility;
 
 public class Baseclass {
 
-	String Browser="chrome";
+	//String Browser="chrome";
 	
 	public WebDriver driver = null;  //object
 	public static WebDriver sdriver = null;     //– This means the variable belongs to the class itself,
@@ -42,8 +42,8 @@ public class Baseclass {
 	@BeforeClass(groups = {"smoke","regression"})
 	public void BC() throws IOException {
 		System.out.println("lunch the browser");
-		String BROWSER=System.getProperty("browser" , flib.getdatafromPropertiesfile("browser"));
-		//String Browser = flib.getdatafromPropertiesfile("browser");
+		//String BROWSER=System.getProperty("browser" , flib.getdatafromPropertiesfile("browser"));
+		String Browser = flib.getdatafromPropertiesfile("browser");
 
 		if (Browser.equals("firefox")) {
 			driver = new FirefoxDriver();
@@ -56,22 +56,23 @@ public class Baseclass {
 			driver = new ChromeDriver();
 
 		}
-       sdriver = driver;
-       UtilityClassObject.setDriver(driver);
+     //  sdriver = driver;
+       //UtilityClassObject.setDriver(driver);
 	}
 
 	@BeforeMethod(groups = {"smoke","regression"})
 	public void configBM() throws IOException, Throwable {
 		System.out.println("==login==");
-		//String URL = flib.getdatafromPropertiesfile("url");
-		//String USERNAME = flib.getdatafromPropertiesfile("username");
-		//String PASSWORD = flib.getdatafromPropertiesfile("password");
-		String URL=System.getProperty("url" , flib.getdatafromPropertiesfile("url"));
-		String USERNAME=System.getProperty("username" , flib.getdatafromPropertiesfile("username"));
-		String PASSWORD=System.getProperty("password" , flib.getdatafromPropertiesfile("password"));
+		String URL = flib.getdatafromPropertiesfile("url");
+		String USERNAME = flib.getdatafromPropertiesfile("username");
+		String PASSWORD = flib.getdatafromPropertiesfile("password");
+		//String URL=System.getProperty("url" , flib.getdatafromPropertiesfile("url"));
+		//String USERNAME=System.getProperty("username" , flib.getdatafromPropertiesfile("username"));
+		//String PASSWORD=System.getProperty("password" , flib.getdatafromPropertiesfile("password"));
 		
 		loginpage lp = new loginpage(driver);
 		driver.get(URL);
+		driver.manage().window().maximize();
 		lp.logintoapp(USERNAME, PASSWORD);
 
 	}
@@ -90,7 +91,7 @@ public class Baseclass {
 		driver.quit();
 	}
 
-	@AfterSuite(groups = { "smoke", "regression","integration"})
+	@AfterSuite(groups = { "smoke", "regression"})
 	public void configAS() {
 		System.out.println("===close DB , report backup===");
 		dlib.closeconnection();

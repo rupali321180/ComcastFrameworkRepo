@@ -4,13 +4,12 @@
 <groups>
   <run>
   <include name= "smoke"></include>
-  <exclude name= "integration"></exclude>
+   <include name= "regression"></include>
    </run>
    </groups>
   <test thread-count="5" name="Test">
     <classes>
       <class name="com.comcast.crm.concattest.CreatecontactTest"/>
-      <class name="com.comcast.crm.orgtest.Createorgtest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
