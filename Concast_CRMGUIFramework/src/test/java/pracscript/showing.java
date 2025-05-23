@@ -52,6 +52,9 @@ public class showing  extends Baseclass{
 		}
 		else {
 			System.out.println(orgName + "is not created");
+			System.out.println(orgName + "is not created");
+			
+			
 		}
 		
 	}
