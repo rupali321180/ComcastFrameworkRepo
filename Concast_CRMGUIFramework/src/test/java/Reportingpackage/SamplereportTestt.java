@@ -1,4 +1,4 @@
-package Reportingpackage;
+ package Reportingpackage;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -36,6 +36,7 @@ public class SamplereportTestt {
 		
 		@AfterSuite
 		public void configAS() {
+			System.out.println("clean flush");
 			report.flush();
 		}
 		
