@@ -5,15 +5,19 @@ import java.awt.Robot;
 import java.time.Duration;
 import java.util.Iterator;
 import java.util.Set;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.bidi.browsingcontext.Locator;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class Webdriverutility {
 
@@ -64,11 +68,12 @@ public class Webdriverutility {
 	{
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	}
-	public void waitforelementpresent(WebDriver driver,WebElement element)
+	public void waitforelementpresent(WebDriver driver,WebElement element , int num)
 	{
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(20));
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
+
 	public void switchtotabonurl(WebDriver driver,String parcialurl)
 	{
 		Set<String> set = driver.getWindowHandles();
@@ -188,4 +193,29 @@ public class Webdriverutility {
 		
 		
 }
+		
+		public void verifyEquals(String actual , String expected) {
+			
+			Assert.assertEquals(actual, expected);
+		}
+		
+       public void verifyEqualss(int actual , int expected) {
+			
+			Assert.assertEquals(actual, expected);
+		}
+       public void verifyTrue(boolean condition) {
+			
+			Assert.assertTrue(condition);
+		}
+       public void verifyFalse(boolean condition) {
+			
+			Assert.assertFalse(condition);
+		}
+       
+       public void waitforelementpresentt(WebDriver driver, By locator, int timeoutInSeconds) {
+    	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+    	    wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    	}
+
 }
+

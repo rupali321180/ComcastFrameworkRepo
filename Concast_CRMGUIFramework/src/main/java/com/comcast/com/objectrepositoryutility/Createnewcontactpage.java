@@ -8,9 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.concast.com.generic.webdriverutility.Webdriverutility;
 
-public class Createnewcontactpage extends Webdriverutility {
+
+public class Createnewcontactpage  {
 
 	
 	WebDriver driver;
@@ -45,8 +45,14 @@ public class Createnewcontactpage extends Webdriverutility {
 	@FindBy(id = "jscal_field_support_end_date")
 	private WebElement enddate;
 	
+	@FindBy(id = "dtlview_Last Name")
+	private WebElement actulLastName;
+	
 	@FindBy(name = "button")
 	private WebElement savebtn;
+	
+	@FindBy(xpath = "//span[@class='dvHeaderText']")
+	private WebElement headermsg;
 	
 	
 	
@@ -59,12 +65,6 @@ public class Createnewcontactpage extends Webdriverutility {
 		return selectbtn;
 	}
 	
-
-	//public WebElement getTxtfield() {
-	//	return txtfield;
-	//}
-	
-
 	public WebElement getPhone() {
 		return phone;
 	}
@@ -82,11 +82,18 @@ public class Createnewcontactpage extends Webdriverutility {
 		return enddate;
 	}
 
+	public WebElement getActulLastName() {
+		return actulLastName;
+	}
+
 	public WebElement getSavebtn() {
 		return savebtn;
 	}
 	
-	
+	public WebElement getHeadermsg() {
+		return headermsg;
+	}
+
 	public void createContactWithName(String lastname) 
 	{
 		lastnametxtfield.sendKeys(lastname);
@@ -106,14 +113,14 @@ public class Createnewcontactpage extends Webdriverutility {
 		}
 	 
 	 
-	 public void createconwithorg() throws InterruptedException {
-		 
-		
-		switchtotabonurl(driver,"module=Accounts");
-			Thread.sleep(2000);
-			switchtotabonurl(driver,"module=Contacts");
-		  
-	}
+//	 public void createconwithorg() throws InterruptedException {
+//		 
+//		
+//		switchtotabonurl(driver,"module=Accounts");
+//			Thread.sleep(2000);
+//			switchtotabonurl(driver,"module=Contacts");
+//		  
+//	}
 	 public void createConwithPhone(String phoneno)
 	 {
 		 phone.sendKeys(phoneno);
