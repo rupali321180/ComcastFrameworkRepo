@@ -24,7 +24,7 @@ import com.concast.com.genericdatabaseutility.Databaseutility;
 
 public class Baseclass {
 
-	String Browser="chrome";
+	
 	
 	public WebDriver driver = null;  //object
 	public static WebDriver sdriver = null;     //– This means the variable belongs to the class itself,
@@ -42,7 +42,7 @@ public class Baseclass {
 	@BeforeClass(groups = {"smoke","regression"})
 	public void BC() throws IOException {
 		System.out.println("lunch the browser");
-		String BROWSER=System.getProperty("browser" , flib.getdatafromPropertiesfile("browser"));
+		String Browser=System.getProperty("browser" , flib.getdatafromPropertiesfile("browser"));
 		//String Browser = flib.getdatafromPropertiesfile("browser");
 
 		if (Browser.equals("firefox")) {
