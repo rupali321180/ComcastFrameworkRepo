@@ -40,7 +40,7 @@ public class CreatecontactTest extends Baseclass {
 	}
 	
 	
-	@Test(groups = {"smoke","regression"})
+	@Test(groups = {"regression"})
 	public void createContactWithSupportDateTest() throws Throwable {
 		String lastname=elib.getdatafromExcel("contact" , 1, 2)+ jlib.getrandomnum();
 		
