@@ -4,7 +4,7 @@
  <groups>
   <run>
   <include name= "smoke"></include>
-  <exclude name= "system"></exclude>
+  <exclude name= "regression"></exclude>
    </run>
    </groups>
   <test thread-count="2" name="Test">
