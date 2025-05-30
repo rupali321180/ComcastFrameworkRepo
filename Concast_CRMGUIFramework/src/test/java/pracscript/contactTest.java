@@ -1,12 +1,6 @@
 package pracscript;
 
-import java.text.SimpleDateFormat;
-
-
-import java.util.Calendar;
-import java.util.Date;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 
 import com.comcast.com.objectrepositoryutility.ChildOrgPage;
@@ -45,6 +39,7 @@ public class contactTest  extends Baseclass {
 	    
 	    Thread.sleep(2000);
 	    driver.findElement(By.xpath("//a[text()='"+ orgName.trim() +"']")).click();
+	    
 	    wlib.switchtotabonurl(driver,"module=Contacts&action");
 	    cnop.getSavebtn().click();
 	    String actualLastName = cnop.getActulLastName().getText();
@@ -58,21 +53,5 @@ public class contactTest  extends Baseclass {
 	}
 	
 }
-	
-	
-	
-	
-//	@Test
-//	public String getRequiredDateyyyyddmm(int days) {
-//		Date dateobj = new Date();
-//		SimpleDateFormat sim = new SimpleDateFormat("yyyy-MM-dd");
-//		String startdate = sim.format(dateobj);
-//
-//		// This calendar is automatically set to the current date
-//		Calendar cal = sim.getCalendar();
-//		cal.add(Calendar.DAY_OF_MONTH, days);
-//		String reqdate = sim.format(cal.getTime());
-//		return reqdate;
-//	}
 
 
