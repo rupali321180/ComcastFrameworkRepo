@@ -21,7 +21,7 @@ public class loginpage extends Webdriverutility{
 
 		//object creation
 		
-		@FindBy(name="user_name")
+		@FindBy(xpath ="//input[@type='text']")
 		private WebElement usernameedit;
 		
 		@FindBy(name="user_password")
